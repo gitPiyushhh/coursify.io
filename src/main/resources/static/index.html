@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" style="height: 91%; padding: 0;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coursify.io | home</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul class="u-flex">
+            <a class="logo" href="./index.html" style="cursor: pointer;">Coursify.io</a>
+            <div class="u-flex">
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Courses</a>
+                    <div class="dropdown-content">
+                        <a href="#" style="font-family: 'inter' ; font-size: 14px;" id="addCourseBtn">Create course</a>
+                        <a style="font-family: 'inter'; font-size: 14px;" href="./courses">Get all courses</a>
+                        <a href="#" style="font-family: 'inter'; font-size: 14px;" id="deleteCourseBtn">Delete
+                            course</a>
+                        <!-- <a href="#" style="font-family: 'inter'; font-size: 14px;">Get course with ID</a>
+                        <a href="#" style="font-family: 'inter'; font-size: 14px;">Get course with student name</a> -->
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Students</a>
+                    <div class="dropdown-content">
+                        <a href="#" style="font-family: 'inter'; font-size: 14px;" id="addStudentBtn">Create student</a>
+                        <a style="font-family: 'inter'; font-size: 14px;" href="./students">Get all
+                            students</a>
+                        <!-- <a href="#" style="font-family: 'inter'; font-size: 14px;">Link to course</a>
+                        <a href="#" style="font-family: 'inter'; font-size: 14px;">Delink from course</a> -->
+                    </div>
+                </li>
+                <li><a href="./sysdesign.html" class="dropbtn" style="text-decoration: none;">System design</a></li>
+                <li><a href="https://documenter.getpostman.com/view/17555530/2s9Y5eLyHo" target="_blank" class="dropbtn"
+                        style="text-decoration: none;">Documentation</a></li>
+                <li class="userAvatar"></li>
+            </div>
+        </ul>
+    </nav>
+
+    <div class="remove" style="width: 80vw; margin: auto;" id="deleteCourseBlock">
+        <div class="u-flex" style="width: 80vw; margin: auto;">
+            <form class="form deleteCourseForm" style="height: 90%;">
+                <div class="u-flex">
+                    <label for="courseIdInput" class="label" id="courseName">Course id</label>
+                    <input type="text" id="courseIdInput" class="input" placeholder="Enter the course ID" required>
+                </div>
+                <br>
+                <button type="submit" class="button" style="width: 100%;  margin-top: 1rem; background-color: red;"
+                    id="deleteCourseBtnCTA">Delete
+                    Course</button>
+            </form>
+
+            <img src="./images/undraw_Throw_away_re_x60k.png" alt="Nothing"
+                style="width: 42vw; height: 100%; display: block;  margin-top: 5rem;" class="" id="delIllust">
+        </div>
+    </div>
+
+
+    <div class="" style="width: 80vw; position: relative; margin: auto;" id="mainBlock">
+        <div class="u-flex" style="width: 80vw; margin: auto; position: relative; top: 0; left: 0;">
+            <img src="./images/userIllust2.png" alt="Nothing" style="width: 42vw; height: 100%; display: block;"
+                class="hide" id="illustration1">
+
+            <img src="./images/undraw_Contract_re_ves9.png" alt="Nothing"
+                style="width: 30vw; height: 90%; display: block; margin-left: -6%;" id="illustration2" class="">
+
+        </div>
+
+        <div class="u-flex" style="width: 80vw; margin: auto; position: absolute;  top: 3rem; left: 0;">
+            <form class="form active" style="height: 90%;" id="form1">
+                <div class="u-flex">
+                    <label for="courseNameVal" class="label" id="courseName">Course name</label>
+                    <input type="text" id="courseNameVal" class="input" placeholder="Enter the course name" required>
+                </div>
+                <br>
+                <button type="submit" class="button" style="width: 100%; margin-top: 1rem;" id="createCourseBtn">Create
+                    Course</button>
+            </form>
+
+            <!-- <h3 class="h3">Or</h3> -->
+
+            <form class="form hide" style="height: 70%;" id="form2">
+                <div class="u-flex-column">
+                    <label for="studentFirstNameVal" class="label" id="courseName">First name</label>
+                    <input type="text" id="studentFirstNameVal" class="input" placeholder="Enter the first name"
+                        style="margin-bottom: 1rem;" required>
+
+                    <label for="studentLastNameValue" class="label" id="courseName">Last name</label>
+                    <input type="text" id="studentLastNameValue" class="input" placeholder="Enter the last name"
+                        style="margin-bottom: 1rem;" required>
+
+                    <label for="studentEmailVal" class="label" id="courseName">Email</label>
+                    <input type="text" id="studentEmailVal" style="margin-bottom: 1rem;" class="input"
+                        placeholder="Enter the email" required>
+                </div>
+                <br>
+                <button type="submit" class="button" style="width: 100%; margin-top: 1rem;" id="createUserBtn">Create
+                    Student</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p class="footer_text">Curated with ♥ by Piyush</p>
+    </div>
+
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>

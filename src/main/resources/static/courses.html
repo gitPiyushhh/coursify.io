@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" style="height: 91%; padding: 0;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coursify.io | courses</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gluten:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+
+    <style>
+        .u-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body::after {
+            content: "";
+            background: rgba(255, 255, 255, 0.849);
+            /* Set the background color with transparency */
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .logo {
+            font-family: 'Gluten', cursive;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .h4 {
+            font-family: "inter";
+            font-weight: 300;
+        }
+
+        #courseTable {
+            width: fit-content;
+            margin: 2rem auto;
+        }
+
+        .table-header {
+            background-color: #6b63ff79;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 2px;
+            font-family: "inter";
+        }
+
+        .table-data {
+            background-color: rgba(0, 0, 0, 0);
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 2px;
+            font-family: "inter";
+        }
+    </style>
+</head>
+
+<body 
+    style="background-image: url('./images/undraw_Decide_re_ixfw.png'); background-repeat: no-repeat; background-position: bottom right; background-attachment: fixed; background-color: rgba(255, 255, 255, 0.11); height: 100%; padding: 0;">
+    <nav class="navbar">
+        <ul class="u-flex" style="margin-top: 2rem;">
+            <a class="logo" style="margin-top: 0;" href="./index.html" style="cursor: pointer;">Coursify.io</a>
+            <div class="u-flex">
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Courses</a>
+                    <div class="dropdown-content">
+                        <a href="./index.html" style="font-family: 'inter' ; font-size: 14px;" id="addCourseBtn">Create
+                            course</a>
+                        <a style="font-family: 'inter'; font-size: 14px;" href="./courses">Get all courses</a>
+                        <a href="#" style="font-family: 'inter'; font-size: 14px;">Delete course</a>
+                        <!-- <a href="#" style="font-family: 'inter'; font-size: 14px;">Get course with ID</a>
+                        <a href="#" style="font-family: 'inter'; font-size: 14px;">Get course with student name</a> -->
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Students</a>
+                    <div class="dropdown-content">
+                        <a href="index.html?executeFunction=true" style="font-family: 'inter'; font-size: 14px;"
+                            id="addStudentBtn">Create
+                            student</a>
+                        <a style="font-family: 'inter'; font-size: 14px;" href="./students">Get all
+                            students</a>
+                        <!-- <a href="#" style="font-family: 'inter'; font-size: 14px;">Link to course</a>
+                        <a href="#" style="font-family: 'inter'; font-size: 14px;">Delink from course</a> -->
+                    </div>
+                </li>
+                <li><a href="./sysdesign.html" class="dropbtn" style="text-decoration: none;">System design</a></li>
+                <li><a href="https://documenter.getpostman.com/view/17555530/2s9Y5eLyHo" target="_blank" class="dropbtn"
+                        style="text-decoration: none;">Documentation</a></li>
+                <li class="userAvatar"></li>
+            </div>
+        </ul>
+    </nav>
+
+    <!-- ////////////////////////////////////// -->
+
+    <!-- <div class="" style="width: 80vw; position: relative; margin: auto;" id="getCourseWithIdBlock">
+        <div class="u-flex" style="width: 75vw; margin: auto; position: relative; top: 0; left: 0;">
+            <form class="form active" style="height: 90%; margin: 0;" id="form3">
+                <div class="u-flex-colum">
+                    <div class="u-flex">
+                        <label for="studentFirstNameValCourse" class="label" id="courseName">First name</label>
+                        <input type="text" id="studentFirstNameValCourse" class="input"
+                            placeholder="Enter the first name" style="margin-bottom: 1rem;" required>
+                    </div>
+
+                    <div class="u-flex">
+                        <label for="studentLastNameValueCourse" class="label" id="courseName">Last name</label>
+                        <input type="text" id="studentLastNameValueCourse" class="input"
+                            placeholder="Enter the last name" style="margin-bottom: 1rem;" required>
+                    </div>
+                </div>
+                <br>
+                <button type="submit" class="button" style="width: 100%; margin-top: 1rem;" id="getCourseWithIdCTA">Get
+                    Course</button>
+            </form>
+
+            <img src="./images/undraw_Contract_re_ves9.png" alt="Nothing"
+                style="width: 30vw; height: 90%; display: block; margin-left: -6%;" id="illustration2" class="">
+
+        </div>
+    </div> -->
+
+    <div id="courseTable" class="u-flex" style="margin-top: 4rem; width: 80vw; justify-content: center;"></div>
+
+    <div class="footer">
+        <p class="footer_text">Curated with ♥ by Piyush</p>
+    </div>
+
+
+    <script>
+        $("#form3").submit(function (event) {
+            event.preventDefault();
+            var firstName = $("#studentFirstNameValCourse").val();
+            var lastName = $("#studentLastNameValueCourse").val();
+
+            getCourseWithName(firstName, lastName);
+
+            $("#courseTable").addClass("remove");
+            $("#courseTableOne").removeClass("remove");
+        });
+
+        // function getStudentsByStudentName(firstName, lastName) {
+        //     $.ajax({
+        //         type: 'GET',
+        //         url: '/api/students/' + firstName + '/' + lastName,
+        //         dataType: 'json',
+        //         success: function (students) {
+        //             var table = '<table style="width: 25%">' +
+        //                 '<thead>' +
+        //                 '<tr>' +
+        //                 '<th class="table-header">ID</th>' +
+        //                 '<th class="table-header">First Name</th>' +
+        //                 '<th class="table-header">Last Name</th>' +
+        //                 '</tr>' +
+        //                 '</thead>' +
+        //                 '<tbody>';
+        //             $.each(students, function (index, student) {
+        //                 table += '<tr>' +
+        //                     '<td class="table-data">' + student.id + '</td>' +
+        //                     '<td class="table-data">' + student.firstName + '</td>' +
+        //                     '<td class="table-data">' + student.lastName + '</td>' +
+        //                     '</tr>';
+        //             });
+        //             table += '</tbody></table>';
+        //             $('#courseTableOne').html(table);
+        //         },
+        //         error: function () {
+        //             $('#courseTableOne').html('Error loading students.');
+        //         }
+        //     });
+        // }
+
+        function loadCourses() {
+            $("#tableOne").addClass("remove");
+            $("#tableAll").removeClass("remove");
+            $.ajax({
+                type: 'GET',
+                url: '/api/courses',
+                dataType: 'json',
+                success: function (courses) {
+                    var table = '<table style="width: 25%" id="tableAll">' +
+                        '<thead>' +
+                        '<tr>' +
+                        '<th class="table-header">ID</th>' +
+                        '<th class="table-header">Name</th>' +
+                        '</tr>' +
+                        '</thead>' +
+                        '<tbody>';
+                    $.each(courses, function (index, course) {
+                        table += '<tr>' +
+                            '<td class="table-data">' + course.courseId + '</td>' +
+                            '<td class="table-data">' + course.courseName + '</td>'
+                        '</tr>';
+                    });
+                    table += '</tbody></table>';
+                    $('#courseTable').html(table);
+                },
+                error: function () {
+                    $('#courseTable').html('Error loading courses.');
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            loadCourses();
+        });
+
+        var studentBtn = document.getElementById('addStudentBtn');
+        studentBtn.addEventListener('click', function () {
+            window.location.href = 'index.html';
+            createUserUI();
+        })
+
+    </script>
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>
