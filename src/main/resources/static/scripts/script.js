@@ -19,6 +19,8 @@ var deleteCourseBlock = document.getElementById("deleteCourseBlock");
 var mainBlock = document.getElementById("mainBlock");
 var deleteCourseBtn = document.getElementById("deleteCourseBtn");
 
+var linkIllust = document.getElementById("linkIllust");
+
 addCourseBtn.addEventListener('click', function () { createCourseUI() });
 addStudentBtn.addEventListener('click', function () { createUserUI() });
 
@@ -148,3 +150,4 @@ $(document).ready(function () {
         createUserUI();
     }
 });
+

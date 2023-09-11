@@ -24,6 +24,22 @@
             margin: 0;
             padding: 0;
             padding-bottom: 5rem;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        body::after {
+            content: "System Design";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            z-index: 1;
+            transform: translateX(20%) translateY(-50%) rotate(90deg);
+            font-size: 4rem;
+            font-weight: 700;
+            color: #6C63FF;
+            opacity: 70%;
+            
         }
 
         .container {

@@ -203,3 +203,11 @@ ul {
 .footer_text {
     font-family: "inter";
 }
+
+.u-margin-top-3 {
+    margin-top: 1rem;
+}
+
+.u-margin-top-neg {
+    margin-top: -2rem;
+}

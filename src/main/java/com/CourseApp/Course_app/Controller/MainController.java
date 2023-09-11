@@ -84,6 +84,8 @@ public class MainController {
             @PathVariable Long studentId) {
         Course course = courseRepository.findById(courseId).orElseThrow(null);
         Student student = studentRepository.findById(studentId).orElseThrow(null);
+
+        System.out.println("Linked the student....");
         course.getStudents().add(student);
         courseRepository.save(course);
     }
