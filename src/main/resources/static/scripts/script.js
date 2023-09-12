@@ -49,6 +49,11 @@ function createUserUIFromDiffPage() {
     createUserUI();
 }
 
+function createLinkUIFromDiffPage() {
+    window.location.href = 'extras.html';
+    createLinkUI();
+}
+
 function createCourse() {
     $("#createCourseBtn").click(function () {
         var courseName = $("#courseNameVal").val();
@@ -149,5 +154,7 @@ $(document).ready(function () {
     if (urlParams.has("executeFunction") && urlParams.get("executeFunction") === "true") {
         createUserUI();
     }
+
+
 });
 

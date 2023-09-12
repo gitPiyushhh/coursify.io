@@ -44,7 +44,6 @@
         .logo {
             font-family: 'Gluten', cursive;
             text-align: center;
-            margin-top: 3rem;
         }
 
         .h4 {
@@ -78,16 +77,16 @@
 <body 
     style="background-image: url('./images/undraw_Decide_re_ixfw.png'); background-repeat: no-repeat; background-position: bottom right; background-attachment: fixed; background-color: rgba(255, 255, 255, 0.11); height: 100%; padding: 0;">
     <nav class="navbar">
-        <ul class="u-flex" style="margin-top: 2rem;">
-            <a class="logo" style="margin-top: 0;" href="./index.html" style="cursor: pointer;">Coursify.io</a>
+        <ul class="u-flex">
+            <a class="logo" href="./index.html" style="cursor: pointer;">Coursify.io</a>
             <div class="u-flex">
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Courses</a>
                     <div class="dropdown-content">
-                        <a href="./index.html" style="font-family: 'inter' ; font-size: 14px;" id="addCourseBtn">Create
-                            course</a>
+                        <a href="#" style="font-family: 'inter' ; font-size: 14px;" id="addCourseBtn">Create course</a>
                         <a style="font-family: 'inter'; font-size: 14px;" href="./courses">Get all courses</a>
-                        <a href="#" style="font-family: 'inter'; font-size: 14px;">Delete course</a>
+                        <a href="#" style="font-family: 'inter'; font-size: 14px;" id="deleteCourseBtn">Delete
+                            course</a>
                         <!-- <a href="#" style="font-family: 'inter'; font-size: 14px;">Get course with ID</a>
                         <a href="#" style="font-family: 'inter'; font-size: 14px;">Get course with student name</a> -->
                     </div>
@@ -95,13 +94,11 @@
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Students</a>
                     <div class="dropdown-content">
-                        <a href="index.html?executeFunction=true" style="font-family: 'inter'; font-size: 14px;"
-                            id="addStudentBtn">Create
-                            student</a>
+                        <a href="#" style="font-family: 'inter'; font-size: 14px;" id="addStudentBtn">Create student</a>
                         <a style="font-family: 'inter'; font-size: 14px;" href="./students">Get all
                             students</a>
-                        <!-- <a href="#" style="font-family: 'inter'; font-size: 14px;">Link to course</a>
-                        <a href="#" style="font-family: 'inter'; font-size: 14px;">Delink from course</a> -->
+                        <a href="./extras.html" style="font-family: 'inter'; font-size: 14px;" id="linkLink">Link to course</a>
+                        <a href="./extras.html" style="font-family: 'inter'; font-size: 14px;" id="delinkLink">Delink from course</a>
                     </div>
                 </li>
                 <li><a href="./sysdesign.html" class="dropbtn" style="text-decoration: none;">System design</a></li>

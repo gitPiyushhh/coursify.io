@@ -30,16 +30,16 @@
 
         body::after {
             content: "System Design";
-            position: absolute;
+            position: fixed;
             right: 0;
-            top: 50%;
+            top: 57%;
             z-index: 1;
-            transform: translateX(20%) translateY(-50%) rotate(90deg);
+            transform: translateX(17%) rotate(90deg);
             font-size: 4rem;
             font-weight: 700;
             color: #6C63FF;
-            opacity: 70%;
-            
+            opacity: 15%;
+
         }
 
         .container {
@@ -70,11 +70,11 @@
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         }
 
-        .item:hover h2{
+        .item:hover h2 {
             color: #6C63FF;
         }
 
-        .item:hover logo{
+        .item:hover logo {
             opacity: 100%;
         }
 
@@ -117,14 +117,15 @@
 <body>
     <nav class="navbar">
         <ul class="u-flex">
-            <a class="logo"  href="./index.html" style="cursor: pointer;">Coursify.io</a>
+            <a class="logo" href="./index.html" style="cursor: pointer;">Coursify.io</a>
             <div class="u-flex">
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Courses</a>
                     <div class="dropdown-content">
                         <a href="#" style="font-family: 'inter' ; font-size: 14px;" id="addCourseBtn">Create course</a>
                         <a style="font-family: 'inter'; font-size: 14px;" href="./courses">Get all courses</a>
-                        <a href="#" style="font-family: 'inter'; font-size: 14px;" id="deleteCourseBtn">Delete course</a>
+                        <a href="#" style="font-family: 'inter'; font-size: 14px;" id="deleteCourseBtn">Delete
+                            course</a>
                         <!-- <a href="#" style="font-family: 'inter'; font-size: 14px;">Get course with ID</a>
                         <a href="#" style="font-family: 'inter'; font-size: 14px;">Get course with student name</a> -->
                     </div>
@@ -135,12 +136,15 @@
                         <a href="#" style="font-family: 'inter'; font-size: 14px;" id="addStudentBtn">Create student</a>
                         <a style="font-family: 'inter'; font-size: 14px;" href="./students">Get all
                             students</a>
-                        <!-- <a href="#" style="font-family: 'inter'; font-size: 14px;">Link to course</a>
-                        <a href="#" style="font-family: 'inter'; font-size: 14px;">Delink from course</a> -->
+                        <a href="./extras.html" style="font-family: 'inter'; font-size: 14px;" id="linkLink">Link to
+                            course</a>
+                        <a href="./extras.html" style="font-family: 'inter'; font-size: 14px;" id="delinkLink">Delink
+                            from course</a>
                     </div>
                 </li>
                 <li><a href="./sysdesign.html" class="dropbtn" style="text-decoration: none;">System design</a></li>
-                <li><a href="https://documenter.getpostman.com/view/17555530/2s9Y5eLyHo" target="_blank" class="dropbtn" style="text-decoration: none;">Documentation</a></li>
+                <li><a href="https://documenter.getpostman.com/view/17555530/2s9Y5eLyHo" target="_blank" class="dropbtn"
+                        style="text-decoration: none;">Documentation</a></li>
                 <li class="userAvatar"></li>
             </div>
         </ul>
@@ -155,7 +159,8 @@
                     * I am using HTML/CSS/JS and jQuery for AJAX calls in the frontend.
                     These technologies provide a responsive and interactive user interface.
                     <br><br>
-                    * The frontend renders the UI throgh HTML files and then through the AJAX calls, we make the communication to our API. The flow is: HTML --> Controller
+                    * The frontend renders the UI throgh HTML files and then through the AJAX calls, we make the
+                    communication to our API. The flow is: HTML --> Controller
                 </p>
             </div>
         </div>
@@ -168,7 +173,8 @@
                     * I am using Spring Boot and the REST pattern for the backend.
                     This allows for efficient data processing and communication.
                     <br><br>
-                    * Controller has methods for every required CRUD operation and added some custom operations. The flow is: Controller --> Desired route method.
+                    * Controller has methods for every required CRUD operation and added some custom operations. The
+                    flow is: Controller --> Desired route method.
                 </p>
             </div>
         </div>
@@ -181,7 +187,9 @@
                     * I am using the H2 database. It offers lightweight and in-memory storage
                     for quick development and testing.
                     <br><br>
-                    * The database credentials and configuration is given in the application.properties. The database creates the new connection evrytime the server is loaded and it uses the JPA repository to perform the SQL querryies.
+                    * The database credentials and configuration is given in the application.properties. The database
+                    creates the new connection evrytime the server is loaded and it uses the JPA repository to perform
+                    the SQL querryies.
                 </p>
             </div>
         </div>
@@ -194,7 +202,8 @@
                     * I am using Spring Security for authentication. It ensures secure access
                     control to protect user data.
                     <br><br>
-                    * Here we are using the Spring Security for our authentication process, there is a file (SecurityConfig.java) which is responsible for the creating users with the different roles.
+                    * Here we are using the Spring Security for our authentication process, there is a file
+                    (SecurityConfig.java) which is responsible for the creating users with the different roles.
                 </p>
             </div>
         </div>
